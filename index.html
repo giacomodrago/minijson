@@ -16,11 +16,11 @@
     <header>
       <div class="container">
         <h1>minijson</h1>
-        <h2>C++ DOM-less JSON parsing and serialization</h2>
+        <h2>C++ DOM-less and allocation-free JSON parsing and serialization</h2>
 
         <section id="downloads">
-          <a href="https://github.com/giacomodrago/minijson_reader" class="btn btn-github"><span class="icon"></span>minijson_writer</a>
-          <a href="https://github.com/giacomodrago/minijson_writer" class="btn btn-github"><span class="icon"></span>minijson_reader</a>
+          <a href="https://github.com/giacomodrago/minijson_reader" class="btn btn-github"><span class="icon"></span>minijson_reader</a>
+          <a href="https://github.com/giacomodrago/minijson_writer" class="btn btn-github"><span class="icon"></span>minijson_writer</a>
         </section>
       </div>
     </header>
@@ -28,23 +28,46 @@
     <div class="container">
       <section id="main_content">
         <h1>
-<a id="minijson" class="anchor" href="#minijson" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>minijson</code>
-</h1>
-
-<p>minijson is a C++ library for JSON parsing and serialization that does not use any DOM intermediate representation. With <code>minijson</code> you trade the convenience of the DOM for the possibility of writing and parsing JSON messages without allocating a single byte of memory.</p>
+          <a id="minijson" class="anchor" href="#minijson" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>minijson</code>
+        </h1>
+        
+        <p><strong><code>minijson</code></strong> is a C++ library for JSON parsing and serialization that does not use any
+        DOM-like intermediate in-memory representation. With <code>minijson</code> you trade the convenience of the DOM for
+        the possibility of writing and parsing JSON messages <em>without allocating a single byte of memory</em>.</p>
+        
+        <p><a href="https://github.com/giacomodrago/minijson_reader"><code>minijson_reader</code></a>
+        and <a href="https://github.com/giacomodrago/minijson_writer"><code>minijson_writer</code></a>
+        are two completely independent libraries.
+        The only things they share are a namespace (<code>minijson</code>) and a common goal, i.e.
+        fat-free JSON in C++.</p>
+        
+        <ul>
+          <li>
+            <a href="https://github.com/giacomodrago/minijson_reader"><code>minijson_reader</code></a>
+            is a callback-based parser (you can use lambdas on C++11), that can effectively parse JSON messages without allocating
+            a single byte of memory, provided the input buffer can be modified. <code>std::istream</code> input is also
+            allowed, but in that case memory allocations must take place.
+          </li>
+          <li>
+            <a href="https://github.com/giacomodrago/minijson_writer"><code>minijson_writer</code></a>
+            is a simple decorator around a std::ostream. It directly writes on the stream without allocating
+            additional memory, and does not throw exceptions unless the stream does.
+          </li>
+        </ul>
+        
       </section>
     </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-64010459-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-64010459-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
 
   </body>
 </html>
