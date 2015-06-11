@@ -28,28 +28,28 @@
     <div class="container">
       <section id="main_content">
         <h1>
-          <a id="minijson" class="anchor" href="#minijson" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>minijson</code>
+          <a id="minijson" class="anchor" href="#minijson" aria-hidden="true"><span class="octicon octicon-link"></span></a>minijson
         </h1>
         
-        <p><strong><code>minijson</code></strong> is a C++ project for JSON parsing and serialization that does not use any
-        DOM-like intermediate in-memory representation. With <code>minijson</code> you trade the convenience of the DOM for
+        <p><strong>minijson</strong> is a C++ project for JSON parsing and serialization that does not use any
+        DOM-like intermediate in-memory representation. With minijson you trade the convenience of the DOM for
         the possibility of writing and parsing JSON messages <em>without allocating a single byte of memory</em>.</p>
         
-        <p><a href="https://github.com/giacomodrago/minijson_reader"><code>minijson_reader</code></a>
-        and <a href="https://github.com/giacomodrago/minijson_writer"><code>minijson_writer</code></a>
+        <p><a href="https://github.com/giacomodrago/minijson_reader">minijson_reader</a>
+        and <a href="https://github.com/giacomodrago/minijson_writer">minijson_writer</a>
         are two completely independent libraries.
-        The only things they share are a namespace (<code>minijson</code>) and a common goal, i.e.
+        The only things they share are a namespace (minijson) and a common goal, i.e.
         fat-free JSON in C++.</p>
         
         <ul>
           <li>
-            <a href="https://github.com/giacomodrago/minijson_reader"><code>minijson_reader</code></a>
+            <a href="https://github.com/giacomodrago/minijson_reader">minijson_reader</a>
             is a callback-based parser (you can use lambdas on C++11), that can effectively parse JSON messages without allocating
-            a single byte of memory, provided the input buffer can be modified. <code>std::istream</code> input is also
+            a single byte of memory, provided the input buffer can be modified. std::istream input is also
             allowed, but in that case memory allocations must take place.
           </li>
           <li>
-            <a href="https://github.com/giacomodrago/minijson_writer"><code>minijson_writer</code></a>
+            <a href="https://github.com/giacomodrago/minijson_writer">minijson_writer</a>
             is a simple decorator around a std::ostream. It directly writes on the stream without allocating
             additional memory, and does not throw exceptions unless the stream does.
           </li>
